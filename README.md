@@ -23,11 +23,10 @@ Artifact coordinates:
 ```kotlin
 repositories {
     maven("https://jitpack.io")
-    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    implementation("com.github.<github-user-or-org>:NinjaInvs:v1.0.0")
+    implementation("com.github.blackninja46:NinjaInvs:v1.0.0")
 }
 ```
 
