@@ -10,15 +10,7 @@ It is not meant to be installed as a standalone server plugin.
 
 Future major Minecraft or Paper API changes can still require adjustments, so this cannot be guaranteed for every version forever.
 
-## Add via GitHub
-
-The simplest distribution path is GitHub + JitPack.
-
-Artifact coordinates:
-
-- Group: `com.github.blackninja46`
-- Artifact: `NinjaInvs`
-- Version: your Git tag, for example `v1.0.0`
+## Implementation
 
 ```kotlin
 repositories {
@@ -26,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.blackninja46:NinjaInvs:1.0.0")
+    implementation("com.github.blackninja46:NinjaInvs:v1.0.0")
 }
 ```
 
