@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.blackninja46:NinjaInvs:v1.0.0")
+    implementation("com.github.blackninja46:NinjaInvs:1.0.0")
 }
 ```
 
