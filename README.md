@@ -16,7 +16,7 @@ The simplest distribution path is GitHub + JitPack.
 
 Artifact coordinates:
 
-- Group: `com.github.<github-user-or-org>`
+- Group: `com.github.blackninja46`
 - Artifact: `NinjaInvs`
 - Version: your Git tag, for example `v1.0.0`
 
