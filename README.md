@@ -31,37 +31,6 @@ dependencies {
 }
 ```
 
-If you publish under `BlackNinjaLive`, the dependency would look like this:
-
-```kotlin
-dependencies {
-    implementation("com.github.BlackNinjaLive:NinjaInvs:v1.0.0")
-}
-```
-
-## Release workflow
-
-Recommended versioning:
-
-- `v1.0.0` for the first stable release
-- `v1.0.1`, `v1.0.2` for bugfixes
-- `v1.1.0` for new backwards-compatible features
-- `v2.0.0` only if you introduce breaking API changes
-
-Recommended GitHub flow:
-
-1. Push the repository to GitHub.
-2. Create a Git tag such as `v1.0.0`.
-3. Push the tag to GitHub.
-4. Use that tag in the dependency string of other plugins.
-
-Example commands:
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
 ## Initialize in your plugin
 
 Initialize the manager once in your plugin's `onEnable()`:
@@ -98,28 +67,3 @@ NinjaInventory inventory = NinjaInventory.builder()
         .provider(new ExampleProvider())
         .build();
 ```
-
-## Example host plugin setup
-
-```kotlin
-plugins {
-    id("java")
-}
-
-repositories {
-    mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/")
-    maven("https://jitpack.io")
-}
-
-dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
-    implementation("com.github.<github-user-or-org>:NinjaInvs:v1.0.0")
-}
-```
-
-If your final plugin jars should not expose the library as a separate server plugin, that is already the case here:
-
-- `NinjaInvs` no longer ships a Paper plugin entrypoint
-- there is no `paper-plugin.yml`
-- the library is meant to be bundled into the consuming plugin
