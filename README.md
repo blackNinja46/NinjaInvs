@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
-    implementation("com.github.blackninja46:NinjaInvs:v1.0.0")
+    implementation("com.github.blackninja46:NinjaInvs:v1.0.1")
 }
 ```
 
