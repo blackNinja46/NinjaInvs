@@ -3,6 +3,8 @@ package live.blackninja.ninjaInvs;
 import live.blackninja.ninjaInvs.content.InventoryContents;
 import live.blackninja.ninjaInvs.content.InventoryProvider;
 import live.blackninja.ninjaInvs.opener.InventoryOpener;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -18,8 +20,10 @@ import java.util.Optional;
 @SuppressWarnings("unchecked")
 public class NinjaInventory {
 
+    private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
+
     private String id;
-    private String title;
+    private Component title;
     private InventoryType type;
     private int rows, columns;
     private boolean closeable;
@@ -87,7 +91,7 @@ public class NinjaInventory {
     }
 
     public String getId() { return id; }
-    public String getTitle() { return title; }
+    public Component getTitle() { return title; }
     public InventoryType getType() { return type; }
     public int getRows() { return rows; }
     public int getColumns() { return columns; }
@@ -107,7 +111,7 @@ public class NinjaInventory {
     public static final class Builder {
 
         private String id = "unknown";
-        private String title = "";
+        private Component title = Component.empty();
         private InventoryType type = InventoryType.CHEST;
         private int rows = 6, columns = 9;
         private boolean closeable = true;
@@ -127,7 +131,17 @@ public class NinjaInventory {
         }
 
         public Builder title(String title) {
+            this.title = Component.text(title);
+            return this;
+        }
+
+        public Builder title(Component title) {
             this.title = title;
+            return this;
+        }
+
+        public Builder miniMessageTitle(String title) {
+            this.title = MINI_MESSAGE.deserialize(title);
             return this;
         }
 
